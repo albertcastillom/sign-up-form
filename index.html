@@ -9,63 +9,86 @@
 <body>
     <div id="container">
         <div id="left-container">
-            <div class="logo-background">
-                <img src="odin-lined.png" alt="odin logo" width="150" height="175">
-                <div id="odin-title">ODIN</div>
+            <div class="forImage">
+                <div class="semi-transparent">
+                    <img src="odin-lined.png" alt="odin logo" width="100" height="140">
+                    <h1 id="odin-title">ODIN</h1>
+                </div>
             </div>
-            <div id="image-credit">Photo by Halie West on Unsplash</div>
+            <div class="forFooter">
+                <p class="p-footer">Photo by <a class="a-footer" href="https://unsplash.com/@haliewestphoto">Halie West</a> 
+                    on <a class="a-footer" href="https://unsplash.com/"> Unsplash</a> </p>
+            </div>
         </div>
 
         <div id="right-container">
 
             <div class="first">
-                <p>This is not a real online service! You know you need something 
-                    like this in your life to help you realize your deepest dreams.
-                </p>
-                <p>
-                You know you want to.   
-                </p>
+                <h2>This is not a real online service! You know you need something<br/> 
+                    like this in your life to help you realize your deepest dreams.<br/>
+                    Sign up <em>now</em> to get started.
+                    <br/><br/>
+                    You <em>know</em> you want to.  
+                </h2>
             </div>
+            <form action="" method="get">
+                <div class="second">
+                    <h3 style="margin-left: 50px; padding-top: 10px;">Let's do this!</h3>
+                        <div class="form-main-div">
+                            <div class="form-divs-left">
+                                <div class="form-div">
+                                    <label for="FN">FIRST NAME</label>
+                                    <input type="text" id="FN">
+                                </div>
+                                <div class="form-div">
+                                    <label for="emailIn">EMAIL</label>
+                                    <input type="text" id="emainIn">
+                                </div>
+                                <div class="form-div">
+                                    <label for="passIn">PASSWORD</label>
+                                    <input type="text" id="passIN" required>
+                                    <p id="error">*passwords do not match</p>
+                                </div>
+                            </div>
 
-            <div class="second">
-            <form>
-                <fieldset>
-                    <legend> Let's do this!</legend>
-            
-                <div class="firstName">
-                    <label for="FN">FIRST NAME</label>
-                    <input type="text" id="FN">
+                            <div class="form-divs-right">
+                                <div class="form-div">
+                                    <label for="LN">LAST NAME</label>
+                                    <input type="text" id="LN">
+                                </div>
+                                <div class="form-div">
+                                    <label for="phoneIN">PHONE NUMBER</label> 
+                                    <input type="tel" id="phoneIn">
+                                </div>
+                                <div class="form-div">
+                                    <label for="confirmPassIn"> CONFIRM PASSWORD</label>
+                                    <input type="text" id="confirmPassIN" required>
+                                </div>
+                            </div>   
+                        </div>
                 </div>
-                <div class="lastName">
-                    <label for="LN">LAST NAME</label>
-                    <input type="text" id="LN">
+                <div class="third">
+                    <button type="submit" class="btn-green">Create Account</button>
                 </div>
-                <div class="email">
-                    <label for="emailIn">EMAIL</label>
-                    <input type="text" id="emainIn">
-                </div>
-                <div class="phoneNum">
-                    <label for="phoneIN">PHONE NUMBER</label> 
-                    <input type="number" id="phoneIn">
-                </div>
-                <div class="password">
-                    <label for="passIn">PASSWORD</label>
-                    <input type="text" id="passIN">
-                </div>
-                <div class="confirmePassword">
-                    <label for="confirmPassIn">PASSWORD</label>
-                    <input type="text" id="confirmPassIN">
-                </div>
-                </fieldset>
             </form>
-            </div>
-
-            <div class="third">
-                 <button id="CreateACC">Create Account</button>
-                <div>Already have an account? <button>Log In</button></div>
+            <div class="hyperLink">
+                <p>Already have an account? <a class="logIn" href="">log in</a> </p>
             </div>
         </div>
     </div>
- </div>   
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        let password = document.querySelector("#passIN").value;
+        let confirmPassword = document.querySelector("#confirmPassIN").value;
+        let error = document.querySelector("#error");
+        if (password ==="" && confirmPassword ==="" ){
+            error.innerHTML = "*passwords do not match";
+        }
+        else if(password == confirmPassword){
+            error.innerHTML = "";
+        };
+    })
+</script>
 </body>
 </html>
